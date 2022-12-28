@@ -1,6 +1,7 @@
+FROM amazoncorretto:11-alpine-jdk
 
-FROM openjdk:9-jdk-alpine
-VOLUME /temp
-EXPOSE 8080
-ARG JAR_FILE=target/docker-0.0.1-SNAPSHOT.jar
-ADD ${JAR_FILE} app.jar
+MAINTAINER emaaristimuno
+
+COPY target/NAME-YOUR-FILE-BUILD-SPRINGBOOT.jar NAME-YOUR-FILE-BUILD-SPRINGBOOT.jar
+
+ENTRYPOINT ["java","-jar","/NAME-YOUR-FILE-BUILD-SPRINGBOOT.jar"]
